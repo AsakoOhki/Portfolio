@@ -8,7 +8,9 @@
   --primary-orange: #F9ab00;
   --primary-dark: rgba(255, 255, 255, 0);
   --primary-red: #ef4035;
+  --primary-black: #000;
   --primary-hover-red: #f33501;
+  
 }
 
 body {
@@ -191,6 +193,52 @@ nav ul li {
   font-weight: 900;
 }
 
+.portfolio-wrapper {
+  background: var(--primary-light-grey);
+  padding: 3rem 0;
+}
+
+.portfolio-image {
+  width: 15rem;
+  height: 9rem;
+  border: 1px solid var(--primary-orange);
+  padding: 0 0.5rem;
+}
+
+.portfolio-image-box {
+ position: relative; 
+ margin: 1rem;
+}
+
+.overflow {
+  position: absolute;
+  opacity: 0;
+  background: var(--primary-black);
+  width: 15rem;
+  height: 10rem;
+  top: 0;
+  border: 1px solid var(--primary-red);
+  cursor: pointer;
+}
+
+.portfolio-image-box:hover .overflow {
+  opacity: 60%;
+  transition: 0.3s ease-in-out;
+}
+
+.portfolio-image-popupbox {
+  width: 30rem;
+  padding: 0 0.5rem;
+}
+
+.hyper-link {
+  cursor: pointer;
+  color: var(--primary-orange);
+}
+
+.hyper-link:hover {
+  color: var(--primary-red);
+}
 
 
 @media(max-width: 768px) {
@@ -229,10 +277,34 @@ nav ul li {
     direction: ltr;
     width: 100%;
   }
+
+  .portfolio-image-popupbox {
+    width: 100%;
+  }
 }
 
 @media(max-width: 468px) {
   .profile-img {
     width: 10rem;
+  }
+}
+
+@media(max-height: 570px) {
+  .popup-wrapper {
+    height: 100%;
+  }
+
+  .portfolio-image-popupbox {
+    width: 50%;
+  }
+}
+
+@media(max-height: 280px) {
+  .popup-wrapper {
+    height: 90%;
+  }
+
+  .portfolio-image-popupbox {
+    width: 30%;
   }
 }
