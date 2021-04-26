@@ -3,14 +3,14 @@
 :root {
   --primary-white: #fff;
   --primary-light-grey: #f4f4f4;
-  --primary-dark-grey: #666;
   --primary-grey: #ccd1d9;
+  --primary-dark-grey: #666;
   --primary-orange: #F9ab00;
-  --primary-dark: rgba(255, 255, 255, 0);
+  --primary-dark: rgb(52, 58, 64);
   --primary-red: #ef4035;
-  --primary-black: #000;
   --primary-hover-red: #f33501;
-  
+  --primary-black: #000;
+  --primary-green: green;
 }
 
 body {
@@ -22,6 +22,7 @@ nav {
 }
 
 nav a.nav-link {
+  font-size: .8rem;
   letter-spacing: 0.0375rem;
   cursor: pointer;
 }
@@ -58,7 +59,7 @@ nav ul li {
   background: url(./images/wall-and-laptop-background.jpg) no-repeat;
   background-size: cover;
   background-position: center;
-  height: 90vh;
+  height: 100vh;
 }
 
 .main-info {
@@ -136,6 +137,11 @@ nav ul li {
   overflow: hidden;
 }
 
+.education h1 {
+  text-transform: uppercase;
+  color: var(--primary-orange);
+}
+
 .education-wrapper::before {
   position: absolute;
   content: "";
@@ -146,12 +152,6 @@ nav ul li {
   height: 100%;
   background: var(--primary-grey);
   z-index: 1;
-}
-
-
-.education h1 {
-  text-transform: uppercase;
-  color: var(--primary-orange);
 }
 
 .timeline-block {
@@ -184,7 +184,7 @@ nav ul li {
   width: 95%;
   padding: 0 0.9375rem;
   color: var(--primary-dark-grey);
-  direction: 1tr;
+  direction: ltr;
 }
 
 .timeline-content h3 {
@@ -197,6 +197,11 @@ nav ul li {
   background: var(--primary-light-grey);
   padding: 3rem 0;
 }
+
+.portfolio-wrapper h1 {
+  background: var(--primary-orange);
+}
+
 
 .portfolio-image {
   width: 15rem;
@@ -226,6 +231,10 @@ nav ul li {
   transition: 0.3s ease-in-out;
 }
 
+.popupbox-wrapper {
+  margin-top: 7rem;
+}
+
 .portfolio-image-popupbox {
   width: 30rem;
   padding: 0 0.5rem;
@@ -240,6 +249,91 @@ nav ul li {
   color: var(--primary-red);
 }
 
+.contacts {
+  background: var(--primary-dark);
+  padding: 3rem 0;
+}
+
+.contacts h1 {
+  color: var(--primary-orange);
+  padding: 1.3rem 0;
+  text-transform: uppercase;
+}
+
+.contacts p {
+  color: var(--primary-white);
+  font-size: 1.2rem;
+}
+
+.contacts input,
+.contacts textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+  resize: none;
+  border: 0;
+  border-bottom: 0.125rem solid var(--primary-dark-grey);
+  border-radius: 0;
+  color: var(--primary-orange);
+  outline: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 0.2rem;
+  padding-left: 0 !important;
+}
+
+.contacts .container {
+  padding: 4rem 0;
+}
+
+.contacts input:focus,
+.contacts textarea:focus {
+  background: transparent;
+  color: var(--primary-orange);
+  border-bottom: 0.125rem solid var(--primary-dark-grey);
+}
+
+.contacts textarea {
+  height: 12.2rem !important;
+}
+
+.contacts-btn {
+  margin: 1rem 0 0 0;
+  width: 100%;
+  background: none;
+}
+
+.line {
+  position: relative;
+  top: -0.8rem;
+  width: 0;
+  height: 0.125rem;
+  background: var(--primary-orange);
+  display: inline-block;
+}
+
+input:focus+.line, textarea:focus+.line {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+input.form-control {
+  margin: -0.3rem 0;
+}
+
+textarea.form-control {
+  margin: -0.3rem 0;
+}
+
+.error-message {
+  color: var(--primary-white);
+  background: var(--primary-hover-red);
+  text-align: left;
+}
+
+.success-message {
+  font-weight: 900;
+  color: var(--primary-green);
+}
 
 @media(max-width: 768px) {
   .particles-canvas {
@@ -256,6 +350,15 @@ nav ul li {
 
   .navbar-brand {
     width: 7rem;
+  }
+
+  .navbar-nav > li > a.active,  
+  .navbar-nav > li > a.active:focus {
+    border-top: 0.1875rem solid var(--primary-orange);
+  }
+
+  .navbar-nav > li > a:hover {
+    border-top: 0.1875rem solid var(--primary-orange);
   }
 
   .education .container {
@@ -281,7 +384,41 @@ nav ul li {
   .portfolio-image-popupbox {
     width: 100%;
   }
+
+  .contacts {
+    overflow-x: hidden;
+  }
+
+  .contacts .container {
+    padding: 0.1rem;
+  }
+
+  .contacts p {
+    padding: 0 0.4rem;
+  }
 }
+
+.footer {
+  background: var(--primary-black);
+  color: var(--primary-dark-grey);
+  padding: 3rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--primary-dark-grey);
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color: var(--primary-orange);
+  cursor:pointer;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
 
 @media(max-width: 468px) {
   .profile-img {
